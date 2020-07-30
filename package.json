@@ -4,7 +4,7 @@
   "description": "A community directory of small businesses in Blewett, BC, Canada",
   "main": "index.js",
   "scripts": {
-    "develop": "eleventy --serve",
+    "start": "npx eleventy --serve",
     "build": "eleventy"
   },
   "author": "Agata Zurek",

@@ -1,0 +1,21 @@
+:root {
+  --base-size: 1rem;
+  --auto-grid-min-size: 16rem;
+}
+
+* {
+  border: 1px solid red;
+}
+
+main {
+  max-width: 85rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size, 16rem), 1fr));
+  grid-gap: 1rem;
+}
