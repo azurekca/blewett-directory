@@ -1,14 +1,13 @@
 :root {
-  --auto-grid-min-size: 16rem;
-  --base-size: 1.1rem;
+  --auto-grid-min-size: 300px;
+  --size-base: 18px;
   /* Major third type scale */
-  --size-300: calc(var(--base-size) * 0.8);
-  --size-400: var(--base-size);
-  --size-500: calc(var(--base-size) * 1.25);
-  --size-600: calc(var(--base-size) * 1.563);
-  --size-700: calc(var(--base-size) * 1.953);
-  --size-800: calc(var(--base-size) * 2.441);
-  --size-900: calc(var(--base-size) * 3.052);
+  --size-sm: calc(var(--size-base) * 0.8);
+  --size-md: calc(var(--size-base) * 1.25);
+  --size-lg: calc(var(--size-base) * 1.563);
+  --size-h3: calc(var(--size-base) * 1.953);
+  --size-h2: calc(var(--size-base) * 2.441);
+  --size-h1: calc(var(--size-base) * 3.052);
 
   --color-dark: #114b5f;
   --color-med-dark: #1a936f;
@@ -17,6 +16,7 @@
   --color-light: #f3e9d2;
   --white: #fff;
 }
+
 /*  this is a guide for placement */
 * {
   border: 1px solid red;
@@ -26,17 +26,17 @@
 body {
   background-color: var(--color-dark);
   color: var(--color-med-light);
-  font-family: 'Open Sans', sans-serif;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 main {
-  max-width: 85rem;
+  max-width: 1360px;
+  /*  margin-left/right centers the content */
   margin-left: auto;
   margin-right: auto;
-  padding: 0 var(--size-400, 1rem);
+  padding: var(--size-base, 1rem);
+  align-self: baseline;
 }
 
 footer {
@@ -46,31 +46,33 @@ footer {
 .auto-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size, 16rem), 1fr));
-  grid-gap: var(--size-400);
+  grid-gap: var(--size-base, 1rem);
 }
 
 .card {
-  padding: var(--size-400);
+  padding: var(--size-base, 1rem);;
   text-align: center;
   background-color: var(--color-light);
   color: var(--color-dark);
-  border-radius: var(--size-300);
+  border-radius: var(--size-sm);
   border: 1px solid var(--color-med);
-  
 }
-
 
 /* TEXT */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
 h1 {
   font-family: 'Lobster';
-  font-size: var(--size-900);
+  font-size: var(--size-h1);
 }
 h2 {
-  font-size: var(--size-800);
+  font-size: var(--size-h2);
+  font-weight: 600;
 }
 h3 {
-  font-size: var(--size-700);
+  font-size: var(--size-h3);
 }
 p {
-  font-size: var(--size-400);
+  font-size: var(--size-base);
 }
