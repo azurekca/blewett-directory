@@ -1,0 +1,78 @@
+:root {
+  --auto-grid-min-size: 300px;
+  --size-base: 18px;
+  /* Major third type scale */
+  --size-sm: calc(var(--size-base) * 0.8);
+  --size-md: calc(var(--size-base) * 1.25);
+  --size-lg: calc(var(--size-base) * 1.563);
+  --size-h3: calc(var(--size-base) * 1.953);
+  --size-h2: calc(var(--size-base) * 2.441);
+  --size-h1: calc(var(--size-base) * 3.052);
+
+  --color-dark: #114b5f;
+  --color-med-dark: #1a936f;
+  --color-med: #88d498;
+  --color-med-light: #c6dabf;
+  --color-light: #f3e9d2;
+  --white: #fff;
+}
+
+/*  this is a guide for placement */
+* {
+  border: 1px solid red;
+}
+
+/* MAIN PAGE STYLES */
+body {
+  background-color: var(--color-dark);
+  color: var(--color-med-light);
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  max-width: 1360px;
+  /*  margin-left/right centers the content */
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--size-base, 1rem);
+  align-self: baseline;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size, 16rem), 1fr));
+  grid-gap: var(--size-base, 1rem);
+}
+
+.card {
+  padding: var(--size-base, 1rem);;
+  text-align: center;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  border-radius: var(--size-sm);
+  border: 1px solid var(--color-med);
+}
+
+/* TEXT */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+h1 {
+  font-family: 'Lobster';
+  font-size: var(--size-h1);
+}
+h2 {
+  font-size: var(--size-h2);
+  font-weight: 600;
+}
+h3 {
+  font-size: var(--size-h3);
+}
+p {
+  font-size: var(--size-base);
+}
