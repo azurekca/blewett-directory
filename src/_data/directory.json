@@ -5,7 +5,7 @@
 		"phone": "250-505-1234",
 		"website": "https://happyflowers.com",
 		"about": "The happiest roadside flower stand you ever did see.",
-		"category": [ "florist", "mom and pop shop" ]
+		"tags": [ "florist", "mom and pop shop" ]
   },
   {
     "name": "Handmade Clothes",
@@ -13,7 +13,7 @@
     "phone": "250-505-1234",
     "website": "https://happyflowers.com",
     "about": "Baby clothes made by hand with love.",
-    "category": [
+    "tags": [
       "florist",
       "mom and pop shop"
     ]
@@ -24,7 +24,7 @@
     "phone": "250-505-1234",
     "website": "https://happyflowers.com",
     "about": "The happiest roadside flower stand you ever did see.",
-    "category": [
+    "tags": [
       "florist",
       "mom and pop shop"
     ]
@@ -35,7 +35,7 @@
     "phone": "250-505-1234",
     "website": "https://happyflowers.com",
     "about": "The happiest roadside flower stand you ever did see.",
-    "category": [
+    "tags": [
       "florist",
       "mom and pop shop"
     ]
