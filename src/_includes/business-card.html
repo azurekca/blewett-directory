@@ -1,11 +1,9 @@
-<ul class="auto-grid">
+<div class="auto-grid">
   {% for listing in directory %}
-    <li>
-      <article>
+      <article class="card">
         <h2>{{ listing.name }}</h2>
         <p>{{ listing.street }}</p>
         <p>{{ listing.about }}</p>
       </article>
-    </li>
   {% endfor %}
-</ul>
+    </div>
