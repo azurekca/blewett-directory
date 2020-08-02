@@ -2,12 +2,10 @@ backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 
-local_backend: true # to run local back end: npx netlify-cms-proxy-server
-
 site_url: https://blewett-community-directory.netlify.app/
 
 # This line should *not* be indented
-media_folder: "static/images" # Media files will be stored in the public folder
+# media_folder: "static/images" # Media files will be stored in the public folder
 collections:
   - label: "Blewett Community Directory" # Used in the UI - as in, this is the label the cms editor will see
     name: "listings" # Used in routes, e.g., /admin/collections/blog
