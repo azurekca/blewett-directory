@@ -2,6 +2,8 @@ backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 
+local_backend: true # to run local back end: npx netlify-cms-proxy-server
+
 site_url: https://blewett-community-directory.netlify.app/
 
 collections:
