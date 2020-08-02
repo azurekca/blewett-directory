@@ -4,7 +4,7 @@ backend:
 site_url: https://blewett-community-directory.netlify.app/
 media_folder: "static/images" # Media files will be stored in the public folder
 collections:
-  - label: "Blewett Community Directory" # Used in the UI - as in, this is the label the cms editor will see
+  - label: "directory listing" # Used in the UI - as in, this is the label the cms editor will see
     name: "listings" # Used in routes, e.g., /admin/collections/blog
     folder: "src/listings" # The path to the folder where the documents are stored
     extension: html # determines the file extension searched for when finding existing entries in a folder collection and it determines the file extension used to save new collection items
