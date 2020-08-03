@@ -1,9 +1,9 @@
 <div class="auto-grid">
-  {% for listing in directory %}
+  {% for listing in collections.listings %}
       <article class="card">
-        <h2>{{ listing.name }}</h2>
-        <p>{{ listing.street }}</p>
-        <p>{{ listing.about }}</p>
+        <h2>{{ listing.data.title }}</h2>
+        <p>{{ listing.data.address }}</p>
+        <p>{{ listing.data.website }}</p>
       </article>
   {% endfor %}
     </div>
