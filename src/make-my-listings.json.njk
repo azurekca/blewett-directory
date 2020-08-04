@@ -1,6 +1,12 @@
 ---
 permalink: "/static/js/listings.json"
 ---
-
-{{ collections.listings | log }}
-{# {{ collections.listings | dump | safe }} #}
+[
+{% for listing in collections.listings %}
+    {
+        "{{listing.data.title}}": {
+            "geometry": {{ listing.data.geometry | safe }}     
+        }
+    }{% if not loop.last %},{% endif %}
+{% endfor %}
+]
