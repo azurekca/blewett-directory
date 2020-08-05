@@ -1,0 +1,15 @@
+---
+permalink: "/static/js/listings.js"
+---
+{# use template interpolation to build a JSON array of listing objects #}
+const listings = [
+  {% for listing in collections.listings %}
+    {
+        "title": "{{ listing.data.title }}",
+        "address": "{{ listing.data.address }}",
+        "website": "{{ listing.data.website }}",
+        "phone": "{{ listing.data.phone }}",
+        "geometry": {{ listing.data.geometry | safe }}
+    }{% if not loop.last %},{% endif %}
+  {% endfor %}
+]

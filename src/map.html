@@ -23,19 +23,7 @@
     <div id="mapBox"></div>
   </main>
   <footer>This is the footer</footer>
-  <script>
-
-    const map = L.map('mapBox').setView([49.479076, -117.393192], 13);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-    {% for listing in collections.listings %}
-      L.marker([{{ listing.data.geo.coordinates[1] }}, {{ listing.data.geo.coordinates[0] }}]).addTo(map)
-        .bindPopup("{{ listing.data.title }}");
-    {% endfor %}
-
-</script>
+  <script type="text/javascript" src="/static/js/listings.js"></script>
+  <script src="/static/js/map.js"></script>
 </body>
 </html>
