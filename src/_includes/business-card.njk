@@ -1,0 +1,20 @@
+<div class="auto-grid">
+  {% for listing in collections.listings %}
+      <article class="card">
+        <svg class="business-icon">
+          <use xlink:href="#placeholder"></use>
+        </svg>
+        <div class="business-info">
+          <h3>{{ listing.data.title }}</h3>
+          {% if listing.data.website %}
+          <p class="inline">website: {{ listing.data.website }}</p>
+          {% endif %}
+          {% if listing.data.phone %}
+          <p class="inline">phone: {{ listing.data.phone }}</p>
+          {% endif %}
+          <p>{{ listing.data.address }}</p>
+          <p>{{ listing.data.about }}</p>
+        </div>
+      </article>
+  {% endfor %}
+</div>
