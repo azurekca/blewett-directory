@@ -1,5 +1,6 @@
 {% extends 'layouts/base.njk' %}
 
 {% block stuff %}
+{{content | safe}}
   {% include 'layouts/business-card.njk' %}
 {% endblock%}

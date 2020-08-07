@@ -14,16 +14,13 @@
   {% include 'partials/svg-icons.html' %}
 </head>
 <body>
-  <header>
-    <h1>{{ title }}</h1>
-    This is the header
-  </header>
+  {% include 'partials/header.html' %}
   <main>
       {% block stuff %}
       no block stuff :(
       {% endblock %}
   </main>
-  <footer>This is the footer</footer>
+  {% include 'partials/footer.html' %}
   {# Page specific scripts #}
   {% if pageScripts %}
     {% include pageScripts %}

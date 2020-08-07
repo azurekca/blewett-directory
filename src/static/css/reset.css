@@ -62,11 +62,13 @@ article > * + * {
 }
 
 /* Inherit fonts for inputs and buttons */
+a,
 input,
 button,
 textarea,
 select {
   font: inherit;
+  color: inherit;
 }
 
 /* Remove all animations and transitions for people that prefer not to see them */
