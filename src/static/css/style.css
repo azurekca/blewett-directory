@@ -37,6 +37,7 @@
 }
 
 /* MAIN PAGE STYLES */
+/*#region*/
 body {
 	background-color: var(--white);
 	color: var(--green900);
@@ -45,8 +46,10 @@ body {
 	flex-direction: column;
 	align-items: stretch;
 	justify-content: center;
-	padding: 0 var(--size400, 1rem);
 	font-size: var(--size-base, 1rem);
+}
+header {
+	padding: 0 var(--size400, 1rem);
 }
 
 header > * {
@@ -89,8 +92,10 @@ footer {
 .inline {
 	display: inline-block;
 }
+/*#endregion*/
 
 /* Listings */
+/*#region*/
 details > summary {
 	list-style: none;
 	cursor: pointer;
@@ -155,8 +160,10 @@ details[open] summary {
   text-decoration: none;
   overflow-wrap: anywhere;
 }
+/*#endregion*/
 
 /* Search Bar */
+/*#region*/
 #search-form {
 	margin-left: auto;
 	padding: 0 var(--size700, 1rem);
@@ -187,8 +194,10 @@ details[open] summary {
 	border-color: var(--green600);
 	right: 0;
 }
+/*#endregion*/
 
 /* Category filter buttons */
+/*#region*/
 #category-list {
 	justify-content: center;
 	color: var(--white);
@@ -208,7 +217,6 @@ details[open] summary {
 	box-shadow: 0 0 0 5px var(--button-box-shadow-color);
 	z-index: 1;
 }
-
 
 li:nth-child(5n-4) .category-button {
 	--button-box-shadow-color: var(--green900);
@@ -230,9 +238,10 @@ li:nth-child(5n) .category-button {
 	--button-box-shadow-color: var(--blue800);
 	background-color: var(--blue800);
 }
-
+/*#endregion*/
 
 /* TEXT */
+/*#region*/
 body {
 	font-family: 'Cabin', sans-serif;
 }
@@ -274,6 +283,7 @@ article a:focus {
 .active {
 	text-decoration: underline;
 }
+/*#endregion*/
 
 /* MAP */
 #mapBox {
@@ -288,6 +298,7 @@ article a:focus {
 	}
 	header {
 		line-height: 1.7;
+		padding: 0 var(--size800, 2rem);
 	}
 	.flex.card {
 		flex-wrap: nowrap;

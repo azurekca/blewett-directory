@@ -1,0 +1,33 @@
+footer {
+  overflow-x: hidden;
+}
+
+svg {
+  width:100vw;
+  overflow:visible;
+}
+
+.wave {
+  animation: wave 16s linear;
+  animation-iteration-count:infinite;
+  fill: var(--blue300);
+}
+#wave1 {
+  opacity: .4;
+}
+#wave2 {
+  animation-duration:20s;
+  opacity: .4;
+  fill: var(--blue400);
+}
+#wave3 {
+  animation-duration: 30s;
+  opacity:.4;
+  fill: var(--blue500);
+}
+
+@keyframes wave {
+  to {transform: translateX(-100%);}
+}
+
+
