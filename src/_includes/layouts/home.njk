@@ -1,6 +1,8 @@
 {% extends 'layouts/base.njk' %}
 
+{% set pageScripts = 'partials/home-scripts.html' %}
+
 {% block stuff %}
-{{content | safe}}
-  {% include 'layouts/business-card.njk' %}
+  {% include 'partials/categories.njk' %}
+  {% include 'partials/business-card.njk' %}
 {% endblock%}

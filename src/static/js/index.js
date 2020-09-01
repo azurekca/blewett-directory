@@ -1,39 +1,36 @@
-const searchForm = document.getElementById('search-form');
 const businessCards = document.getElementsByClassName('card');
-const filterButtonsList = document.getElementsByClassName('category');
 
-// Event Listeners
-searchForm.addEventListener('submit', () => {
-  event.preventDefault();
-  const searchTerms = document.getElementById('search').value.split(' ');
-  searchCards(searchTerms, businessCards);
-});
+// Event Listeners for search form
+document.getElementById('search-form').addEventListener('submit', () => event.preventDefault());
+document.getElementById('search-input').addEventListener('input', event => searchCards(event.target, businessCards))
 
 // Event listener for filter cards buttons
 document.addEventListener('click', (event) => {
   if (event.target.tagName === 'BUTTON') {
-    const clickedBtn = event.target;
     // show only cards matching filter
-    filterCards(clickedBtn.innerHTML);
-    // set selected class on clicked button's list element, remove from rest
-    for (let i = 0; i < filterButtonsList.length; i++) {
-      filterButtonsList[i].classList.remove('selected');
-    }
-    clickedBtn.parentElement.classList.add('selected');
+    filterCards(event.target.innerHTML, businessCards);
+    return;
   }
+  if (event.target.matches('details p')) {
+    toggleDetails(event.target.closest('details'));
+    return;
+  }
+  // console.log(event.target.tagName)
 });
 
 /**
  * Show only cards that match all the search terms provided
  * @param {Array} searchTerms 
  */
-function searchCards(searchTerms, Cards) {
-  
-  showAllElements(Cards);
-
+function searchCards(searchTerms, cards) {
+  console.log(searchTerms)
+  // show all cards
+  showAllElements(cards);
+  // convert search terms into an array
+  searchTerms = searchTerms.value.split(' ')
   // loop through each card looking for search string, hide if not found
-  for (let i = 0; i < Cards.length; i++) {
-    const card = Cards[i];
+  for (let i = 0; i < cards.length; i++) {
+    const card = cards[i];
     searchTerms.forEach(term => {
       if (!card.innerText.toLowerCase().includes(term.toLowerCase())) {
         card.style.display = 'none';
@@ -42,13 +39,13 @@ function searchCards(searchTerms, Cards) {
   }
 }
 
-function filterCards(filterString) {
+function filterCards(filterString, cards) {
   // show all cards
-  showAllElements(businessCards)
+  showAllElements(cards)
   console.log(filterString)
   if (filterString === 'Show All') return;
-  for (let i = 0; i < businessCards.length; i++) {
-    const card = businessCards[i];
+  for (let i = 0; i < cards.length; i++) {
+    const card = cards[i];
     if (!card.dataset.categories.includes(filterString)) {
       card.style.display = 'none';
     }
@@ -64,4 +61,8 @@ function showAllElements(elements) {
     const element = elements[i];
     element.style.display = '';
   }
+}
+
+function toggleDetails(details) {
+  if (details.open) details.open = false;
 }
