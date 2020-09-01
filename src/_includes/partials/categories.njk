@@ -1,0 +1,11 @@
+{% set categoriesList = collections.listings %}
+<ul id="category-list" class="flex">
+  <li class="selected">
+    <button class="category-button">Show All</button>
+  </li>
+  {%- for category in collections.categoriesList %}
+  <li class="category">
+    <button class="category-button">{{ category }}</button>
+  </li>
+  {%- endfor %}
+</ul>

@@ -1,7 +1,8 @@
 <header class="flex">
   <h1>{{ title }}</h1>
+  {% include 'partials/search-form.njk' %}
   <nav class="flex">
-    <a href="/" {% if page.url == "/" %} class="active"{% endif %}>Listings</a>
-    <a href="/map/" {% if page.url == "/map/" %} class="active"{% endif %}>Map</a>
+    <a href="/" {%- if page.url == "/" %} class="active"{% endif %}>Listings</a>
+    <a href="/map" {%- if page.url == "/map/" %} class="active"{% endif %}>Map</a>
   </nav>
 </header>

@@ -1,0 +1,55 @@
+<div class="auto-grid wrapper">
+  {% for listing in collections.listings %}
+      <article class="card flex" data-categories="{{ listing.data.category }}">
+        <svg class="business-icon">
+          <use xlink:href="#circle"></use>
+        </svg>
+        <div class="business-info">
+          <h2>{{ listing.data.title }}</h2>
+          <div class="group">
+            {%- if listing.data.about %}
+            <details class="about">
+              <summary>{{ listing.data.about | truncate(140, false, ' ...') | markdownify | safe}}</summary>
+              <p>{{ listing.data.about | markdownify | safe }}</p>
+            </details>
+            {% endif %}
+          </div>
+          <div class="group">
+            {% if listing.data.website -%}
+            <a class="block" href="{{ listing.data.website }}">
+              <svg class="contact-icon">
+                <use xlink:href="#website"></use>
+              </svg>
+              {{ listing.data.website }}</a>
+            {%- endif %}
+            {% if listing.data.email -%}
+            <a class="block" href="mailto:{{ listing.data.email }}">
+              <svg class="contact-icon">
+                <use xlink:href="#email"></use>
+              </svg>
+              {{ listing.data.email }}</a>
+            {%- endif %}
+            {% if listing.data.phone -%}
+            <a class="block" href="tel:{{ listing.data.phone }}">
+              <svg class="contact-icon">
+                <use xlink:href="#phone"></use>
+              </svg>
+              {{ listing.data.phone }}</a>
+            {%- endif %}
+          </div>
+          <div class="group">
+            <p>{{ listing.data.address }}</p>
+          </div>
+          <div class="group">
+            {% for social in listing.data.social -%}
+              <a href="{{ social.url }}">
+                <svg class="icon social">
+                  <use xlink:href="#{{social.type}}"></use>
+                </svg>
+              </a>
+            {%- endfor %}
+          </div>
+        </div>
+      </article>
+  {% endfor %}
+</div>

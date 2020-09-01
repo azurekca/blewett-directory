@@ -6,24 +6,23 @@
   <title>{{ title }}</title>
   <link rel="stylesheet" href="/static/css/reset.css">
   <link rel="stylesheet" href="/static/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  {# Add facility for pages to declare an array of critical styles #}
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500&family=Lobster&display=swap" rel="stylesheet">
+  {# Add facility for pages to add styles #}
   {% if pageStyles %}
     {% include pageStyles %}
   {% endif %}
-  {% include 'partials/svg-icons.html' %}
 </head>
 <body>
-  {% include 'partials/header.html' %}
+  {%- include 'partials/svg-icons.html' %}
+  {%- include 'partials/header.html' %}
   <main>
-      {% block stuff %}
-      no block stuff :(
-      {% endblock %}
+    {% block stuff %}
+    {% endblock %}
   </main>
-  {% include 'partials/footer.html' %}
+  {%- include 'partials/footer.html' %}
   {# Page specific scripts #}
   {% if pageScripts %}
-    {% include pageScripts %}
+    {%- include pageScripts %}
   {% endif %}
 </body>
 </html>
