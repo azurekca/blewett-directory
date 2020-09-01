@@ -3,6 +3,8 @@ title: Agata Zurek Web Development
 category:
   - Web
 website: http://agatazurek.com
+phone: 250-505-3745
+email: agata.w.zurek@gmail.com
 contact: Agata Zurek
 about: Bespoke artisanal hand crafted websites
 showMap: false
