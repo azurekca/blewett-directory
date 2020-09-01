@@ -15,7 +15,6 @@ document.addEventListener('click', (event) => {
     toggleDetails(event.target.closest('details'));
     return;
   }
-  // console.log(event.target.tagName)
 });
 
 /**
@@ -41,9 +40,16 @@ function searchCards(searchTerms, cards) {
 
 function filterCards(filterString, cards) {
   // show all cards
-  showAllElements(cards)
-  console.log(filterString)
+  showAllElements(cards);
+
+  // scroll to card container
+  document.getElementById('listings').scrollIntoView({
+    behavior: 'smooth',
+  });
+
   if (filterString === 'Show All') return;
+
+  // show all cards matching filter
   for (let i = 0; i < cards.length; i++) {
     const card = cards[i];
     if (!card.dataset.categories.includes(filterString)) {
