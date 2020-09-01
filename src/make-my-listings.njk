@@ -6,10 +6,14 @@ const listings = [
   {% for listing in collections.listings %}
     {
         "title": "{{ listing.data.title }}",
+        "category": "{{ listing.data.category }}",
         "address": "{{ listing.data.address }}",
         "website": "{{ listing.data.website }}",
         "phone": "{{ listing.data.phone }}",
+        "email": "{{ listing.data.email }}",
+        "showMap": {{ listing.data.showMap }},
         "geometry": {{ listing.data.geometry | safe }}
     }{% if not loop.last %},{% endif %}
+
   {% endfor %}
 ]
