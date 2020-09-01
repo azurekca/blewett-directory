@@ -1,9 +1,13 @@
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
+
 local_backend: true # to run local back end: npx netlify-cms-proxy-server
+publish_mode: editorial_workflow
+
 site_url: https://blewett-community-directory.netlify.app/
 media_folder: "static/images" # Media files will be stored in the public folder
+
 collections:
   - label: "Directory Listing" # Used in the UI - as in, this is the label the cms editor will see
     name: "listings" # Used in routes, e.g., /admin/collections/blog
@@ -13,9 +17,25 @@ collections:
     delete: true # prevents user from deleting items in collection
     fields: # The fields for each document, usually in front matter
       - {label: "Business Name", name: "title", widget: "string"} # Widgets define the data type and interface for entry fields
+      - label: "Business Category"
+        name: "category"
+        widget: "select"
+        multiple: true
+        options: ["Accommodation", "Cleaning Services", "Farm", "Flowers", "Graphic Design", "Handmade", "Music", "Photography", "Physiotherapy", "Riding School", "Technology", "Web", "Woodworking", "Yoga",]
       - {label: "Street Address", name: "address", widget: "string", required: false} # https://www.netlifycms.org/docs/widgets/
       - {label: "Website", name: "website", widget: "string", required: false}
-      - {label: "Phone Number", name: "phone", widget: "string", pattern: ['^\d{3}-\d{3}-\d{4}$', 'Phone number must be 123-123-1234'], required: false}
-      - {label: "About", name: "about", widget: "text"}
-      - {label: " Social Media Links", name: "social", widget:  "list", default": ['facebook']}
+      - {label: "Phone Number", name: "phone", widget: "string", pattern: ['^\d{3}-\d{3}-\d{4}$', 'Phone number must be 123-123-1234'], required: false, hint: "Format 250-123-4567"}
+      - {label: "Email", name: "email", widget: "string", required: false}
+      - {label: "Contact Person", name: "contact", widget: "string", hint: "This is for reference and will not show up on the site"}
+      - {label: "About", name: "about", widget: "markdown"}
+      - label: "Social Media Links"
+        name: "social"
+        widget: "list"
+        collapsed: false
+        label_singular: "social media link"
+        required: false
+        fields:
+        - {label: "Social Media Type", name: "type", widget: "select", options: ["facebook", "instagram", "twitter"]}
+        - {label: "URL", name: "url", widget: "string"}
+      - {label: "Show on map?", name: "showMap", widget: "boolean", default: false}
       - {label: 'Map', name: 'geometry', widget: 'map', default: '{"type":"Point","coordinates":[-117.3918235,49.486667]}'} # will default to position given when creating new content
