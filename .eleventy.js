@@ -9,6 +9,16 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/admin");
   eleventyConfig.addPassthroughCopy("./src/cms");
 
+  // create collection
+  eleventyConfig.addCollection("categoriesList", require("./src/utils/getCategoryList.js"));
+
+  // Add a markdown filter
+  // Pulled the bare basics for this from here https://github.com/nhoizey/nicolas-hoizey.com/blob/master/.eleventy.js
+  const md = require('markdown-it')();
+  eleventyConfig.addFilter('markdownify', (markdownString) =>
+    md.render(markdownString)
+  );
+
   return {
     markdownTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',
