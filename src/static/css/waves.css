@@ -2,28 +2,38 @@ footer {
   overflow-x: hidden;
 }
 
-svg {
+footer p {
+  position: relative;
+  z-index: 1;
+}
+
+svg#waves {
   width: 100vw;
   overflow: visible;
+  transform: scaleY(2);
 }
 
 .wave {
+  fill: #7bcbdf;
+  opacity: .4;
   animation: wave 16s linear;
   animation-iteration-count: infinite;
-  fill: var(--blue300);
-  opacity: .4;
 }
 #wave2 {
+  fill: var(#3eb3d7);
   animation-duration: 20s;
-  fill: var(--blue400);
 }
 #wave3 {
+  fill: var(#009acf);
   animation-duration: 30s;
-  fill: var(--blue500);
 }
 
 @keyframes wave {
   to {transform: translateX(-100%);}
 }
 
-
+@media (min-width: 900px) {
+  svg#waves {
+    transform: scaleY(1);
+  }
+}
