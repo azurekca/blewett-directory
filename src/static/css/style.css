@@ -52,13 +52,13 @@ header, main {
 	padding: var(--size400, 1rem);
 }
 
-main {
-	margin-top: var(--size600);
-}
-
 header > * {
 	margin-top: var(--size-base, 1rem);
 	line-height: 1;
+}
+
+header > * + * {
+	padding-top: var(--size400, 1rem);
 }
 
 footer {
@@ -74,7 +74,7 @@ footer {
 .auto-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size, 16rem), 1fr));
-	grid-gap: var(--size500, 1rem);
+	gap: var(--size600, 1rem) var(--size500, 1rem);
 }
 
 .flex {
@@ -109,16 +109,16 @@ details[open] summary {
 	visibility: hidden;
 	height: 0;
 }
-.about > * + * {
+.about > p + * {
   margin-top: var(--size-base, 1em);
 }
 .card {
-	padding: var(--size-base, 1rem);
+	position: relative;
+	padding: var(--size600, 1rem);
 	text-align: left;
 	background-color: var(--white);
-	/* border-radius: var(--size200); */
 	border: 2px solid var(--green300);
-	box-shadow: 0 0 0 4px var(--white);
+	box-shadow: 3px 4px 6px -2px var(--blue200);
 	align-content: stretch;
 	justify-content: start;
 }
@@ -138,20 +138,9 @@ details[open] summary {
 	stroke: var(--blue700);
 }
 
-.business-icon {
- 	stroke: var(--blue500);	
-	width: 4rem;
-	height: 4rem;
-	flex-shrink: 0;
-	align-self: start;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.business-info {
+.business-info, .business-category {
 	padding-left: var(--size400);
 }
-
 .business-info > * + * {
 	margin-top: 1rem;
 }
@@ -161,37 +150,73 @@ details[open] summary {
 }
 /*#endregion*/
 
+/* Rounded SVG category icon and matching cutout */
+/* Adapted from Stephanie Eckles https://thinkdobecreate.com/ */
+/*#region*/
+.card .business-icon {
+	stroke: var(--blue500);
+	width: 4.1rem;
+	height: 4.1rem;
+	position: relative;
+	margin-top: -3.9rem;
+	margin-right: auto;
+	margin-left: auto;
+	
+	border-radius: 50%;
+	background-color: var(--white);
+	z-index: 1;
+	/* object-fit: contain; */
+	/* filter: drop-shadow(1px 1px 3px var(--blue900));  */
+	
+	/* margin-bottom: var(--size200); */
+	/* padding: 0.2rem; */
+}
+
+.card::after {
+    position: absolute;
+    content: ""; 
+}
+
+.card::after {
+	top: -2px;
+	right: 50%;
+	width: 7.26rem;
+	height: 4.1rem;
+	transform: translateX(50%);
+	background-image: radial-gradient(circle at top,var(--white) 50%,var(--green300) 51%);
+	clip-path: circle(50% at 50% 0);
+}
+/*#endregion*/
+
 /* Search Bar */
 /*#region*/
 #search-form {
-	margin-left: auto;
-	padding: 0 var(--size700, 1rem);
+	white-space: nowrap; /* this prevents the label from wrapping to the next line*/
 }
 .search-icon {
+	position: relative;
+	top: calc(0.14 * var(--size800));
 	width: var(--size600);
 	height: var(--size600);
 	stroke: var(--green800);
 	stroke-width: var(--size500);
-	position: relative;
-	top: calc(0.14 * var(--size800));
 }
 #search-input {
 	position: relative;
+	top: calc(-0.6 * var(--size400));
 	background-color: inherit;
 	border: none;
-	border-bottom: 2px solid var(--white);
-	top: calc(-0.085 * var(--size800));
-	line-height: 1.5;
-	width: 0;
+	border-bottom: 2px solid var(--green800);
+	line-height: 2;
+	max-width: 30ch;
 	transition: all 0.2s ease-in-out;
 	transition-duration: 0.75s;
-	font-size: inherit;
+	font-size: var(--size400);
 }
 #search-form:hover #search-input,
 #search-input:focus {
-	width: 30ch;
-	border-color: var(--green600);
-	right: 0;
+	background-color: var(--blue200);
+
 }
 /*#endregion*/
 
@@ -200,15 +225,14 @@ details[open] summary {
 #category-list {
 	justify-content: center;
 	color: var(--white);
-	margin-bottom: var(--size600);
+	margin-bottom: var(--size800);
 }
 
 .category-button {
 	position: relative;
 	background-color: var(--green800);
 	border: none;
-	/* border-radius: var(--size200); */
-	padding: calc(0.25 * var(--size-base, 1rem)) calc(0.5 * var(--size-base, 1rem));
+	padding: calc(0.25 * var(--size700, 1rem)) calc(0.5 * var(--size700, 1rem));
 	cursor: pointer;
 	z-index: 0;
 }
@@ -239,6 +263,15 @@ li:nth-child(5n) .category-button {
 }
 /*#endregion*/
 
+/* FOOTER */
+/*#region*/
+footer p:last-child {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: var(--size400, 1rem);
+}
+/*#endregion*/
+
 /* TEXT */
 /*#region*/
 body {
@@ -260,6 +293,12 @@ p, a {
 	font-size: var(--size-base);
 	max-width: 65ch;
 }
+article p {
+	letter-spacing: 0.7px;
+}
+article p, article a {
+	color: var(--green700);
+}
 nav a {
 	font-family: 'Lobster';
 	font-size: var(--size700);
@@ -271,9 +310,6 @@ nav a:focus {
 	color: var(--green600);
 	text-decoration: underline;
 }
-article a {
-	color: var(--green800)
-}
 article a:hover,
 article a:focus {
 	color: var(--blue700);
@@ -282,11 +318,20 @@ article a:focus {
 .active {
 	text-decoration: underline;
 }
+.business-category {
+	color: var(--blue700);
+	letter-spacing: 1.8px;
+	font-weight: 700;
+	margin: var(--size600) 0 var(--size200);
+	/* max-width: 12ch;
+	word-wrap: normal; */
+}
 /*#endregion*/
 
 /* MAP */
 #mapBox {
-	height: 700px;
+	height: 70vh;
+	width: 100%;
 	border-radius: var(--size200);
 }
 
@@ -301,12 +346,20 @@ article a:focus {
 	}
 	main {
 		padding: 0 var(--size800, 2rem);
+		margin-top: var(--size600);
 	}
 	.flex.card {
 		flex-wrap: nowrap;
 	}
+	.business-category {
+		position: relative;
+		top: calc(var(--size-base)*-1);
+	}
 	.business-icon {
 		margin-left: 0;
 		margin-right: 0;
+	}
+	.category-button {
+		padding: calc(0.25 * var(--size-base, 1rem)) calc(0.5 * var(--size-base, 1rem));
 	}
 }
