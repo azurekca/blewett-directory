@@ -1,16 +1,17 @@
 <div id="listings" class="auto-grid wrapper">
   {% for listing in collections.listings %}
-      <article class="card flex" data-categories="{{ listing.data.category }}">
-        <svg class="business-icon">
+      <article class="card " data-categories="{{ listing.data.category }}">
+        <svg class="business-icon block">
           <use xlink:href="#circle"></use>
         </svg>
+        <p class="business-category">{{ listing.data.category | join(", ") }}</p>
         <div class="business-info">
           <h2>{{ listing.data.title }}</h2>
           {%- if listing.data.about %}
             <div class="group">
                 {% if listing.data.about | length > 140 %}
                 <details class="about">
-                  <summary>{{ listing.data.about | truncate(140, false, ' ...') | markdownify | safe}}</summary>
+                  <summary>{{ listing.data.about | truncate(140, false, ' ... ') | markdownify | safe}}</summary>
                   {{ listing.data.about | markdownify | safe }}
                 </details>
               {% else %}
@@ -51,7 +52,7 @@
           {% if listing.data.social %}
             <div class="group">
               {% for social in listing.data.social -%}
-                <a href="{{ social.url }}">
+                <a href="{{ social.url }}" aria-label="Find {{listing.data.title}} on {{social.type}}">
                   <svg class="icon social">
                     <use xlink:href="#{{social.type}}"></use>
                   </svg>
