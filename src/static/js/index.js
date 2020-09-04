@@ -22,9 +22,7 @@ document.addEventListener('click', (event) => {
  * @param {Array} searchTerms 
  */
 function searchCards(searchTerms, cards) {
-  console.log(searchTerms)
-  // show all cards
-  showAllElements(cards);
+  const results = [];
   // convert search terms into an array
   searchTerms = searchTerms.value.split(' ')
   // loop through each card looking for search string, hide if not found
@@ -32,16 +30,16 @@ function searchCards(searchTerms, cards) {
     const card = cards[i];
     searchTerms.forEach(term => {
       if (!card.innerText.toLowerCase().includes(term.toLowerCase())) {
-        card.style.display = 'none';
+        results.push(card);
       }
     });
   }
+  
+  showHideCards(results);
 }
 
 function filterCards(filterString, cards) {
-  // show all cards
-  showAllElements(cards);
-
+  const results = [];
   // scroll to card container
   document.getElementById('listings').scrollIntoView({
     behavior: 'smooth',
@@ -53,8 +51,20 @@ function filterCards(filterString, cards) {
   for (let i = 0; i < cards.length; i++) {
     const card = cards[i];
     if (!card.dataset.categories.includes(filterString)) {
-      card.style.display = 'none';
+      results.push(card);
     }
+  }
+
+  showHideCards(results);
+}
+
+function showHideCards(cards) {
+  // show all cards
+  showAllElements(businessCards);
+  // hide supplied cards
+  for (let i = 0; i < cards.length; i++) {
+    const card = cards[i];
+    card.style.display = 'none';
   }
 }
 
