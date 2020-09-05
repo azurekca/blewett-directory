@@ -1,5 +1,6 @@
 module.exports = () => {
   return {
-    tags: "listings"
+    tags: "listings",
+    permalink: false
   }
 }
