@@ -6,11 +6,7 @@ document.getElementById('search-input').addEventListener('input', event => searc
 
 // Event listener for filter cards buttons
 document.addEventListener('click', (event) => {
-  if (event.target.tagName === 'BUTTON') {
-    // show only cards matching filter
-    filterCards(event.target.innerHTML, businessCards);
-    return;
-  }
+
   if (event.target.matches('details p')) {
     toggleDetails(event.target.closest('details'));
     return;
@@ -23,59 +19,53 @@ document.addEventListener('click', (event) => {
  */
 function searchCards(searchTerms, cards) {
   const results = [];
+  let resultText = '';
+
   // convert search terms into an array
-  searchTerms = searchTerms.value.split(' ')
-  // loop through each card looking for search string, hide if not found
+  searchTerms = searchTerms.value.split(' ');
+
+  // loop through each card looking for search string
   for (let i = 0; i < cards.length; i++) {
     const card = cards[i];
     searchTerms.forEach(term => {
-      if (!card.innerText.toLowerCase().includes(term.toLowerCase())) {
+      if (card.innerText.toLowerCase().includes(term.toLowerCase())) {
         results.push(card);
       }
     });
   }
   
   showHideCards(results);
-}
 
-function filterCards(filterString, cards) {
-  const results = [];
-  // scroll to card container
-  document.getElementById('listings').scrollIntoView({
-    behavior: 'smooth',
-  });
+  // update dom to announce to screen reader number of results
 
-  if (filterString === 'Show All') return;
-
-  // show all cards matching filter
-  for (let i = 0; i < cards.length; i++) {
-    const card = cards[i];
-    if (!card.dataset.categories.includes(filterString)) {
-      results.push(card);
-    }
+  if (results.length === 1) {
+    resultText = '1 result';
+  } else {
+    resultText = `${results.length} results`;
   }
-
-  showHideCards(results);
+  document.getElementById('search-results').innerText = resultText;
 }
 
+/**
+ * Hides supplied list of cards, shows all if empty
+ * @param {array} cards array of dom elements to hide
+ */
 function showHideCards(cards) {
-  // show all cards
-  showAllElements(businessCards);
-  // hide supplied cards
-  for (let i = 0; i < cards.length; i++) {
-    const card = cards[i];
-    card.style.display = 'none';
-  }
+  // hide all cards
+  showOrHideElements(businessCards, false);
+  // show supplied cards
+  cards.forEach(card => card.style.display = '');
 }
 
 /**
  * Set display to default for all the dom elements in the collection
  * @param {element} elements dom collection
  */
-function showAllElements(elements) {
+function showOrHideElements(elements, show) {
+  const display = show ? '' : 'none';
   for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
-    element.style.display = '';
+    element.style.display = display;
   }
 }
 
