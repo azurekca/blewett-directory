@@ -1,11 +1,15 @@
 {% set categoriesList = collections.listings %}
 <ul id="category-list" class="flex" aria-label="Business categories">
   <li class="selected">
-    <button class="category-button">Show All</button>
+    <a class="category-link" href="/">Show All</a>
   </li>
   {%- for category in collections.categoriesList %}
   <li class="category">
-    <button class="category-button">{{ category }}</button>
+    <a {%- if category | slug in page.url %}
+     class="category-link active" aria-current="page"
+     {% else %}
+     class="category-link"
+     {% endif %} href="/category/{{ category | slug }}/">{{ category }}</a>
   </li>
   {%- endfor %}
 </ul>

@@ -220,7 +220,7 @@ details[open] summary {
 }
 /*#endregion*/
 
-/* Category filter buttons */
+/* Category filter links */
 /*#region*/
 #category-list {
 	justify-content: center;
@@ -228,37 +228,38 @@ details[open] summary {
 	margin-bottom: var(--size800);
 }
 
-.category-button {
+.category-link {
 	position: relative;
 	background-color: var(--green800);
 	border: none;
 	padding: calc(0.25 * var(--size700, 1rem)) calc(0.5 * var(--size700, 1rem));
 	cursor: pointer;
 	z-index: 0;
+	text-decoration: none;
 }
-.category-button:hover, .category-button:focus {
-	box-shadow: 0 0 0 5px var(--button-box-shadow-color);
+.category-link:hover, .category-link:focus, .category-link.active {
+	box-shadow: 0 0 0 5px var(--link-box-shadow-color);
 	z-index: 1;
 }
 
-li:nth-child(5n-4) .category-button {
-	--button-box-shadow-color: var(--green900);
+li:nth-child(5n-4) .category-link {
+	--link-box-shadow-color: var(--green900);
 	background-color: var(--green900);
 }
-li:nth-child(5n-3) .category-button {
-	--button-box-shadow-color: var(--green800);
+li:nth-child(5n-3) .category-link {
+	--link-box-shadow-color: var(--green800);
 	background-color: var(--green800);
 }
-li:nth-child(5n-2) .category-button {
-	--button-box-shadow-color: var(--green700);
+li:nth-child(5n-2) .category-link {
+	--link-box-shadow-color: var(--green700);
 	background-color: var(--green700);
 }
-li:nth-child(5n-1) .category-button {
-	--button-box-shadow-color: var(--blue900);
+li:nth-child(5n-1) .category-link {
+	--link-box-shadow-color: var(--blue900);
 	background-color: var(--blue900);
 }
-li:nth-child(5n) .category-button {
-	--button-box-shadow-color: var(--blue800);
+li:nth-child(5n) .category-link {
+	--link-box-shadow-color: var(--blue800);
 	background-color: var(--blue800);
 }
 /*#endregion*/
@@ -315,7 +316,7 @@ article a:focus {
 	color: var(--blue700);
 	text-decoration: underline;
 }
-.active {
+header .active {
 	text-decoration: underline;
 }
 .business-category {
@@ -359,7 +360,7 @@ article a:focus {
 		margin-left: 0;
 		margin-right: 0;
 	}
-	.category-button {
+	.category-link {
 		padding: calc(0.25 * var(--size-base, 1rem)) calc(0.5 * var(--size-base, 1rem));
 	}
 }

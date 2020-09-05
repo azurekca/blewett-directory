@@ -2,6 +2,12 @@
 
 {% set pageScripts = 'partials/home-scripts.html' %}
 
+{% set listings = helpers.getListingsByCategory(collections.listings) %}
+{# {{ pagination | log }} #}
+{% if pagination.items %}
+  {% set listings = helpers.getListingsByCategory(collections.listings, pagination.items[0]) %}
+{% endif %}
+
 {% block stuff %}
   {% include 'partials/categories.njk' %}
   {% include 'partials/business-card.njk' %}
