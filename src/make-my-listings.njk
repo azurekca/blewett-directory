@@ -6,6 +6,7 @@ const listings = [
   {% for listing in collections.listings %}
     {
         "title": "{{ listing.data.title }}",
+        "slug" : "{{ listing.data.title | slug }}",
         "category": "{{ listing.data.category }}",
         "address": "{{ listing.data.address }}",
         "website": "{{ listing.data.website }}",

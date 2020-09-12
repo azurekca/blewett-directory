@@ -44,9 +44,13 @@
               {%- endif %}
             </div>
           {% endif %}
-          {% if listing.data.address %}
+          {% if listing.data.address or listing.data.showMap %}
             <div class="group">
-              <p>{{ listing.data.address }}</p>
+              <a class="block" href="/map?listing={{ listing.data.title | slug }}">
+                  <svg class="contact-icon">
+                    <use xlink:href="#map-icon"></use>
+                  </svg>
+                  {{ listing.data.address if listing.data.address else 'map'}}</a>
             </div>
           {% endif %}
           {% if listing.data.social %}

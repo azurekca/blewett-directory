@@ -1,0 +1,16 @@
+/* todo: style pop up text */
+/* todo: make fun pop up animation */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background-color: var(--green200);
+}
+
+.leaflet-popup-content {
+  font-family: 'Cabin', sans-serif;
+  font-size: var(--size-base);
+  color: var(--green900);
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  color: var(--blue800);
+}
