@@ -4,5 +4,5 @@
     <a href="/" {%- if page.url == "/" %} class="active" aria-current="page"{% endif %}>Listings</a>
     <a href="/map" {%- if page.url == "/map/" %} class="active" aria-current="page"{% endif %}>Map</a>
   </nav>
-  {% include 'partials/search-form.njk' %}
+  {%- if page.url == "/" %}{% include 'partials/search-form.njk' %}{% endif %}
 </header>
