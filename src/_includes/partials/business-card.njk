@@ -25,22 +25,19 @@
                 <a class="block" href="{{ listing.data.website }}">
                   <svg class="contact-icon">
                     <use xlink:href="#website"></use>
-                  </svg>
-                  {{ listing.data.website }}</a>
+                  </svg>{{ listing.data.website }}</a>
               {%- endif %}
               {% if listing.data.email -%}
                 <a class="block" href="mailto:{{ listing.data.email }}">
                   <svg class="contact-icon">
                     <use xlink:href="#email"></use>
-                  </svg>
-                  {{ listing.data.email }}</a>
+                  </svg>{{ listing.data.email }}</a>
               {%- endif %}
               {% if listing.data.phone -%}
                 <a class="block" href="tel:{{ listing.data.phone }}">
                   <svg class="contact-icon">
                     <use xlink:href="#phone"></use>
-                  </svg>
-                  {{ listing.data.phone }}</a>
+                  </svg>{{ listing.data.phone }}</a>
               {%- endif %}
             </div>
           {% endif %}
@@ -49,8 +46,7 @@
               <a class="block" href="/map?listing={{ listing.data.title | slug }}">
                   <svg class="contact-icon">
                     <use xlink:href="#map-icon"></use>
-                  </svg>
-                  {{ listing.data.address if listing.data.address else 'map'}}</a>
+                  </svg>{{ listing.data.address if listing.data.address else 'map'}}</a>
             </div>
           {% endif %}
           {% if listing.data.social %}

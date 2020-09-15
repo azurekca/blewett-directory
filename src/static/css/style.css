@@ -74,7 +74,7 @@ footer {
 .auto-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size, 16rem), 1fr));
-	gap: var(--size600, 1rem) var(--size500, 1rem);
+	gap: var(--size700, 1rem) var(--size500, 1rem);
 }
 
 .flex {
@@ -118,16 +118,17 @@ details[open] summary {
 	text-align: left;
 	background-color: var(--white);
 	border: 2px solid var(--green300);
-	box-shadow: 3px 4px 6px -2px var(--blue200);
+	box-shadow: 3px 4px 6px -2px var(--blue200), -3px 4px 6px -2px var(--blue200);
 	align-content: stretch;
 	justify-content: start;
 }
 
 .contact-icon {
 	position: relative;
-	top: calc(0.14 * var(--size-base));
+	top: calc(0.17 * var(--size-base));
 	width: var(--size-base);
 	height: var(--size-base);
+	margin-inline-end: var(--size200);
 	fill: var(--blue500);
 	stroke: var(--green500);
 }
@@ -172,12 +173,9 @@ details[open] summary {
 	/* padding: 0.2rem; */
 }
 
-.card::after {
-    position: absolute;
-    content: ""; 
-}
-
-.card::after {
+.card:after {
+	position: absolute;
+  content: "";
 	top: -2px;
 	right: 50%;
 	width: 7.26rem;
@@ -301,14 +299,14 @@ article p {
 article p, article a {
 	color: var(--green700);
 }
-nav a {
+.main-nav a {
 	font-family: 'Lobster';
 	font-size: var(--size700);
 	padding: 0 var(--size-base, 1rem);
 	text-decoration: none;
 }
-nav a:hover,
-nav a:focus {
+.main-nav a:hover,
+.main-nav a:focus {
 	color: var(--green600);
 	text-decoration: underline;
 }
