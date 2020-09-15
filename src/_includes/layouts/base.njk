@@ -15,6 +15,7 @@
   {% endif %}
 </head>
 <body>
+  {{ skipLink | safe if skipLink }}
   {%- include 'partials/svg-icons.html' %}
   {%- include 'partials/header.html' %}
   <main>

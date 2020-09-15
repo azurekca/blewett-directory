@@ -1,5 +1,6 @@
 {% extends 'layouts/base.njk' %}
 
+{% set skipLink = '<a href="#listings" class="visually-hidden">Jump directly to listings</a>' %}
 {% set pageScripts = 'partials/home-scripts.html' %}
 
 {% set listings = helpers.getListingsByCategory(collections.listings) %}

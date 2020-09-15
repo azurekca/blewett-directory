@@ -100,3 +100,13 @@ select {
 	white-space: nowrap;
 	width: 1px;
 }
+
+.visually-hidden:focus {
+  clip: auto;
+  height: auto;
+  overflow: auto;
+  position: absolute;
+  width: auto;
+  top: 0;
+  left: 0;
+}
