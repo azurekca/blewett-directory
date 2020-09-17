@@ -1,9 +1,9 @@
 <div id="listings" class="auto-grid wrapper">
   {% for listing in listings %}
       <article class="card " data-categories="{{ listing.data.category }}">
-        <svg class="business-icon block">
+        {# <svg class="business-icon block">
           <use xlink:href="#circle"></use>
-        </svg>
+        </svg> #}
         <p class="business-category">{{ listing.data.category | join(", ") }}</p>
         <div class="business-info">
           <h2>{{ listing.data.title }}</h2>
