@@ -1,8 +1,11 @@
 module.exports = function (eleventyConfig) {
 
+  // Tell eleventy to watch for changes in the scss folder
+  eleventyConfig.addWatchTarget("./src/scss/");
+
   // copy static assets to output folder
   eleventyConfig.addPassthroughCopy("./src/static/images");
-  eleventyConfig.addPassthroughCopy("./src/static/css");
+  eleventyConfig.addPassthroughCopy("./src/static/css/*.css");
   eleventyConfig.addPassthroughCopy("./src/static/js");
   
   // cms config and html

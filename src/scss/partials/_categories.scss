@@ -1,0 +1,46 @@
+@mixin embiggenPadding($color) {
+  background-color: $color;
+  &:hover, &:focus, &.active {
+    box-shadow: 0 0 0 5px $color;
+    z-index: 1;
+  }
+}
+
+/* Category filter links */
+#category-list {
+	justify-content: center;
+	color: $white;
+	margin-bottom: $size800;
+}
+
+.category-link {
+	position: relative;
+	display: inline-block;
+	border: none;
+	padding: 0.25 * $size700 0.5 * $size700;
+	cursor: pointer;
+	z-index: 0;
+	text-decoration: none;
+}
+
+li:nth-child(5n-4) .category-link {
+	@include embiggenPadding($green900)
+}
+li:nth-child(5n-3) .category-link {
+  @include embiggenPadding($green800)
+}
+li:nth-child(5n-2) .category-link {
+  @include embiggenPadding($green700)
+}
+li:nth-child(5n-1) .category-link {
+  @include embiggenPadding($blue900)
+}
+li:nth-child(5n) .category-link {
+  @include embiggenPadding($blue800)
+}
+
+@media (min-width: 600px) {
+  .category-link {
+		padding: 0.25 * $size-base 0.5 * $size-base;
+	}
+}
