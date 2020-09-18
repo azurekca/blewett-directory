@@ -1,7 +1,7 @@
 ---
 title: and the carrot came up
 category:
-  - Woodworking
+  - Toys
 website: http://www.andthecarrotcameup.ca
 contact: Ray-Ann
 about: Early childhood education. Small business selling handcrafted Waldorf
