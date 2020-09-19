@@ -23,10 +23,13 @@ header > * {
 
 footer {
 	margin-top: auto;
-  p:last-child {
+	padding-top: $size200;
+  p {
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: $size400;
+		padding-bottom: $size800;
+		padding-left: $size200;
+		padding-right: $size200;
   }
 }
 
