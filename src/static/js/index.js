@@ -1,8 +1,8 @@
 const businessCards = document.getElementsByClassName('card');
 
 // Event Listeners for search form
-document.getElementById('search-form').addEventListener('submit', event => event.preventDefault());
-document.getElementById('search-input').addEventListener('input', event => searchCards(event.target, businessCards))
+document.getElementById('search-form')?.addEventListener('submit', event => event.preventDefault());
+document.getElementById('search-input')?.addEventListener('input', event => searchCards(event.target, businessCards))
 
 // Event listener for filter cards buttons
 document.addEventListener('click', (event) => {
