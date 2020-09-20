@@ -1,38 +1,41 @@
 footer {
   position: relative;
-  // overflow: visible;
-  // background-color: brown;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
-// make sure footer text shows up on top of svg
 footer p {
   position: relative;
   z-index: 1;
 }
 
 .container-waves {
+  width: 100vw;
   position: absolute;
-  left: 0;
   bottom: -10px;
+  transform: scaleY(2);
 }
 
 .wave {
-  fill: $blue200;
-  opacity: .3;
+  fill: #7bcbdf;
+  opacity: .4;
   animation: wave 20s linear;
   animation-iteration-count: infinite;
-  overflow-x: hidden;
 }
 #wave2 {
-  fill: $blue300;
+  fill: var(#3eb3d7);
   animation-duration: 30s;
 }
 #wave3 {
-  fill: $blue400;
+  fill: var(#009acf);
   animation-duration: 40s;
 }
 
 @keyframes wave {
   to {transform: translateX(-100%);}
+}
+
+@media (min-width: 900px) {
+  .container-waves {
+    transform: scaleY(1);
+  }
 }
