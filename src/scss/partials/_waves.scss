@@ -1,7 +1,9 @@
 footer {
-  overflow: visible;
+  position: relative;
+  // overflow: visible;
+  // background-color: brown;
+  overflow-y: hidden;
 }
-
 
 // make sure footer text shows up on top of svg
 footer p {
@@ -10,16 +12,9 @@ footer p {
 }
 
 .container-waves {
-  position: relative;
-  bottom: -40vh;
+  position: absolute;
   left: 0;
-
-  @media (min-width: 400px) {
-    bottom: -20vh;
-  }
-  @media (min-width: 600px) {
-    bottom: -10vh;
-  }
+  bottom: -10px;
 }
 
 .wave {
@@ -27,7 +22,7 @@ footer p {
   opacity: .3;
   animation: wave 20s linear;
   animation-iteration-count: infinite;
-  overflow-x: visible;
+  overflow-x: hidden;
 }
 #wave2 {
   fill: $blue300;
