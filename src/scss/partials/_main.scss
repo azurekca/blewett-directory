@@ -1,0 +1,47 @@
+/* MAIN PAGE STYLES */
+body {
+	background-color: $white;
+	color: $green900;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
+	font-size: $size-base;
+}
+
+header, main {
+	padding: $size400;
+}
+
+header > * {
+	margin-top: $size-base;
+  line-height: 1;
+  + * {
+    padding-top: $size400;
+  }
+}
+
+footer {
+	margin-top: auto;
+	padding-top: $size900;
+  p {
+    margin-left: auto;
+    margin-right: auto;
+		padding-bottom: $size800;
+		padding-left: $size200;
+		padding-right: $size200;
+  }
+}
+
+@media (min-width: 600px) {
+	
+	header {
+		line-height: 1.7;
+		padding: 0 $size800;
+	}
+	main {
+		padding: 0 $size800;
+		margin-top: $size600;
+	}
+}

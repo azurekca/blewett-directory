@@ -6,9 +6,7 @@
   <meta name="theme-color" content="#10413b" />
   <meta name="description" content="Blewett Community Business website was created with love by the community for the community. Sponsored by Rooted Shala Physiotherapy and Agata Zurek Web Development. It is designed to be used by locals and visitors alike to keep the economy local and sustainable and to continue the support for local and small businesses.">
   <title>{{ title }}</title>
-  <link rel="stylesheet" href="/static/css/reset.css">
   <link rel="stylesheet" href="/static/css/style.css">
-  <link rel="stylesheet" href="/static/css/waves.css">
   <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&family=Lobster&display=swap" rel="stylesheet">
   {# Add facility for pages to add styles #}
   {% if pageStyles %}
@@ -18,6 +16,7 @@
 <body>
   {{ skipLink | safe if skipLink }}
   {%- include 'partials/svg-icons.html' %}
+  {# {%- include 'partials/parallax.html' %} #}
   {%- include 'partials/header.html' %}
   <main>
     {% block stuff %}

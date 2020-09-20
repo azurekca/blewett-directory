@@ -1,5 +1,6 @@
 footer {
-  overflow-x: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 footer p {
@@ -7,25 +8,26 @@ footer p {
   z-index: 1;
 }
 
-svg#waves {
+.container-waves {
   width: 100vw;
-  overflow: visible;
+  position: absolute;
+  bottom: -10px;
   transform: scaleY(2);
 }
 
 .wave {
   fill: #7bcbdf;
   opacity: .4;
-  animation: wave 16s linear;
+  animation: wave 20s linear;
   animation-iteration-count: infinite;
 }
 #wave2 {
   fill: var(#3eb3d7);
-  animation-duration: 20s;
+  animation-duration: 30s;
 }
 #wave3 {
   fill: var(#009acf);
-  animation-duration: 30s;
+  animation-duration: 40s;
 }
 
 @keyframes wave {
@@ -33,7 +35,7 @@ svg#waves {
 }
 
 @media (min-width: 900px) {
-  svg#waves {
+  .container-waves {
     transform: scaleY(1);
   }
 }

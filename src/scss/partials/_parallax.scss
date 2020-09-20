@@ -1,0 +1,62 @@
+body {
+  position: relative;
+}
+
+.parallax .group {
+  position: relative;
+	height: 100vh;
+  transform-style: preserve-3d;
+}
+
+.parallax .layer {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+}
+
+#birch {
+  transform: scale(1) translateY(70vh);
+  opacity: 0.5;
+}
+
+#cedar {
+  transform:  scale(1) translateY(20vh);
+}
+
+#larch {
+  transform: scale(1) translateY(20vh);
+}
+
+#fir {
+  transform: scale(1) translateY(10vh);
+}
+// dark grey
+#mtn1 {
+  fill: #b3b3b3;
+  transform: scale(1) translateY(10vh);
+  z-index: -2;
+}
+// light grey
+#mtn2 {
+  fill: #f6fbef;
+  transform: scale(1) translateY(0);
+  z-index: -1;
+}
+
+.trees2-front {
+  background: #12161e;
+  width: 100vw;
+  height: 30vh;
+  position: relative;
+  margin-top: -5px;
+}
+
+.trees-front {
+  position: relative;
+  margin-top: -5px;
+  background-color: #111115;
+  width: 100vw;
+  height: 125vh;
+}
+
+

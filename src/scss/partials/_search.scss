@@ -1,0 +1,29 @@
+/* Search Bar */
+#search-form {
+	white-space: nowrap; /* this prevents the label from wrapping to the next line*/
+}
+.search-icon {
+	position: relative;
+	top: 0.14 * $size800;
+	width: $size600;
+	height: $size600;
+	stroke: $green800;
+	stroke-width: $size500;
+}
+#search-input {
+	position: relative;
+	top: -0.6 * $size400;
+	background-color: inherit;
+	border: none;
+	border-bottom: 2px solid $green800;
+	line-height: 2;
+	max-width: 30ch;
+	transition: all 0.2s ease-in-out;
+	transition-duration: 0.75s;
+	font-size: $size400;
+}
+#search-form:hover #search-input,
+#search-input:focus {
+	background-color: $blue200;
+
+}

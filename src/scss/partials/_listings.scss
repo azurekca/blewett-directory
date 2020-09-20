@@ -1,0 +1,74 @@
+/* Listings */
+details > summary {
+	list-style: none;
+	cursor: pointer;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] p {
+	cursor: pointer;
+}
+details[open] summary {
+	visibility: hidden;
+	height: 0;
+}
+.about > p + * {
+  margin-top: $size-base;
+}
+.card {
+	position: relative;
+	padding: $size600;
+	text-align: left;
+	// background-color: $white;
+	border: 2px solid $green300;
+	// box-shadow: 3px 4px 6px -2px $blue200, -3px 4px 6px -2px $blue200;
+	align-content: stretch;
+	justify-content: start;
+}
+
+.business-category {
+	margin: $size700 0 $size200;
+}
+
+.contact-icon {
+	position: relative;
+	top: 0.17 * $size-base;
+	width: $size-base;
+	height: $size-base;
+	margin-inline-end: $size200;
+	fill: $blue500;
+	stroke: $green500;
+}
+
+.icon.social {
+	width: $size500;
+	height: $size500;
+	stroke: $blue700;
+}
+
+
+.business-info > * + * {
+	margin-top: 1rem;
+}
+.business-info a {
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 600px) {
+	.flex.card {
+		flex-wrap: nowrap;
+	}
+	.business-info, .business-category {
+	padding-left: $size400;
+}
+  .business-category {
+		position: relative;
+		top: $size-base*-1;
+	}
+	.business-icon {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}

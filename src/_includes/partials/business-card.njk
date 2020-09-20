@@ -2,7 +2,7 @@
   {% for listing in listings %}
       <article class="card " data-categories="{{ listing.data.category }}">
         <svg class="business-icon block">
-          <use xlink:href="#circle"></use>
+          <use xlink:href="#{{ listing.data.category | last | slug | lower }}"></use>
         </svg>
         <p class="business-category">{{ listing.data.category | join(", ") }}</p>
         <div class="business-info">
