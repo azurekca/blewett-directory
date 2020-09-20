@@ -1,10 +1,5 @@
-.parallax {
-  perspective: 1px;
-  perspective-origin: center;
-  overflow-y: auto;
-  overflow-x: hidden;
-  margin-top: 0;
-  height: 100vh;
+body {
+  position: relative;
 }
 
 .parallax .group {
@@ -16,60 +11,36 @@
 .parallax .layer {
   position: absolute;
   width: 100%;
-	overflow: hidden;
+  overflow: hidden;
 }
 
-#trees1 {
-  fill: #111115;
-  transform: translateZ(.25px) scale(.75) translateY(-1vh);
+#birch {
+  transform: scale(1) translateY(70vh);
+  opacity: 0.5;
 }
 
-#trees2 {
-  fill: #12161e;
-  transform: translateZ(0px) scale(1) translateY(-1vh);
+#cedar {
+  transform:  scale(1) translateY(20vh);
 }
 
-#trees3 {
-  fill: #19202f;
-  transform: translateZ(-.25px) scale(1.25) translateY(-1vh);
+#larch {
+  transform: scale(1) translateY(20vh);
 }
 
-#trees4 {
-  fill: #222032;
-  transform: translateZ(-.5px) scale(1.5) translateY(-1vh);
+#fir {
+  transform: scale(1) translateY(10vh);
 }
-
-#trees5 {
-  fill: #15172a;
-  transform: translateZ(-.75px) scale(1.75) translateY(-1vh);
+// dark grey
+#mtn1 {
+  fill: #b3b3b3;
+  transform: scale(1) translateY(10vh);
+  z-index: -2;
 }
-
-#mountain1 {
-  fill: #202a5c;
-  transform: translateZ(-2.25px) scale(3.25) translateY(-1vh);
-}
-
-#mountain2 {
-  fill: #4a4d82;
-  transform: translateZ(-2.5px) scale(3.5) translateY(-1vh);
-}
-
-#mountain3 {
-  fill: #5f5d99;
-  transform: translateZ(-3px) scale(4) translateY(-10vh);
-	height: 50vh;
-}
-
-#mountain4 {
-  fill: #8a7d9e;
-  transform: translateZ(-3.5px) scale(4.5) translateY(-20vh);
-	height: 30vh;
-}
-
-#sun {
-  fill: #ff7e00;
-  transform: translateZ(-6px) scale(7) translateY(-25vh);
-	height: 25vh;
+// light grey
+#mtn2 {
+  fill: #f6fbef;
+  transform: scale(1) translateY(0);
+  z-index: -1;
 }
 
 .trees2-front {
@@ -88,9 +59,4 @@
   height: 125vh;
 }
 
-.site_name {
-	color: #FFF;
-	display: inline-block;
-	margin: 0 0 0 20px;
-}
 
