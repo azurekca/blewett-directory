@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#10413b" />
   <title>{{ title }}</title>
-  <link rel="stylesheet" href="/static/css/reset.css">
   <link rel="stylesheet" href="/static/css/style.css">
-  <link rel="stylesheet" href="/static/css/waves.css">
   <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&family=Lobster&display=swap" rel="stylesheet">
   {# Add facility for pages to add styles #}
   {% if pageStyles %}
@@ -17,6 +15,7 @@
 <body>
   {{ skipLink | safe if skipLink }}
   {%- include 'partials/svg-icons.html' %}
+  {# {%- include 'partials/parallax.html' %} #}
   {%- include 'partials/header.html' %}
   <main>
     {% block stuff %}

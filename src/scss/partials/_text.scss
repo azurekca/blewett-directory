@@ -30,11 +30,11 @@ article p, article a {
 	font-size: $size700;
 	padding: 0 $size-base;
 	text-decoration: none;
-}
-.main-nav a:hover,
-.main-nav a:focus {
-	color: $green600;
-	text-decoration: underline;
+	&:hover,
+	&:focus {
+		color: $green600;
+		text-decoration: underline;
+	}
 }
 article a:hover,
 article a:focus {
@@ -48,7 +48,6 @@ header .active {
 	color: $blue700;
 	letter-spacing: 1.8px;
 	font-weight: 700;
-	margin: $size600 0 $size200;
 	/* max-width: 12ch;
 	word-wrap: normal; */
 }

@@ -9,6 +9,7 @@ body {
 	justify-content: center;
 	font-size: $size-base;
 }
+
 header, main {
 	padding: $size400;
 }
@@ -23,7 +24,7 @@ header > * {
 
 footer {
 	margin-top: auto;
-	padding-top: $size200;
+	padding-top: $size900;
   p {
     margin-left: auto;
     margin-right: auto;

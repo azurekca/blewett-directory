@@ -7,15 +7,15 @@
 
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
-  background-color: var(--green200);
+  background-color: $green200;
 }
 
 .leaflet-popup-content {
   font-family: 'Cabin', sans-serif;
-  font-size: var(--size-base);
-  color: var(--green900);
+  font-size: $size-base;
+  color: $green900;
 }
 
 .leaflet-container a.leaflet-popup-close-button {
-  color: var(--blue800);
+  color: $blue800;
 }

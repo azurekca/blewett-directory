@@ -20,11 +20,15 @@ details[open] summary {
 	position: relative;
 	padding: $size600;
 	text-align: left;
-	background-color: $white;
+	// background-color: $white;
 	border: 2px solid $green300;
-	box-shadow: 3px 4px 6px -2px $blue200, -3px 4px 6px -2px $blue200;
+	// box-shadow: 3px 4px 6px -2px $blue200, -3px 4px 6px -2px $blue200;
 	align-content: stretch;
 	justify-content: start;
+}
+
+.business-category {
+	margin: $size700 0 $size200;
 }
 
 .contact-icon {
@@ -43,9 +47,7 @@ details[open] summary {
 	stroke: $blue700;
 }
 
-.business-info, .business-category {
-	padding-left: $size400;
-}
+
 .business-info > * + * {
 	margin-top: 1rem;
 }
@@ -57,7 +59,10 @@ details[open] summary {
 @media (min-width: 600px) {
 	.flex.card {
 		flex-wrap: nowrap;
-  }
+	}
+	.business-info, .business-category {
+	padding-left: $size400;
+}
   .business-category {
 		position: relative;
 		top: $size-base*-1;
