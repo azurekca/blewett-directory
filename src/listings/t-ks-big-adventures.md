@@ -1,7 +1,7 @@
 ---
 title: T&K's Big Adventures
 category:
-  - contractors
+  - Contractors
 website: http://onsitewastewatersolutions.ca/
 phone: 250-354-4650
 contact: Todd and Koreen Williamson
