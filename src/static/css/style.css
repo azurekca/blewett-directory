@@ -146,9 +146,9 @@ select {
 /* MAIN PAGE STYLES */
 body {
   background-color: #f6fbef;
+  background: linear-gradient(to bottom, #b9e3e7 0%, #f6fbef 30%);
   color: #10413b;
   text-align: center;
-  display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
@@ -316,7 +316,7 @@ details[open] summary {
   position: relative;
   padding: 33.201px;
   text-align: left;
-  background-color: rgba(246, 251, 239, 0.85);
+  background-color: rgba(246, 251, 239, 0.9);
   border: 2px solid #90cd5f;
   align-content: stretch;
   justify-content: start;
@@ -469,7 +469,6 @@ li:nth-child(5n) .category-link:hover, li:nth-child(5n) .category-link:focus, li
   perspective-origin: 0%;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, #b9e3e7 0%, #f6fbef 30%);
 }
 
 .parallax {
@@ -544,7 +543,6 @@ li:nth-child(5n) .category-link:hover, li:nth-child(5n) .category-link:focus, li
 
 footer {
   position: relative;
-  overflow: hidden;
 }
 
 footer p {
@@ -557,6 +555,10 @@ footer p {
   position: absolute;
   bottom: -10px;
   transform: scaleY(2);
+}
+
+svg#waves {
+  overflow: visible;
 }
 
 .wave {

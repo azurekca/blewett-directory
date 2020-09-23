@@ -1,6 +1,6 @@
 footer {
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 footer p {
@@ -13,6 +13,10 @@ footer p {
   position: absolute;
   bottom: -10px;
   transform: scaleY(2);
+}
+
+svg#waves {
+  overflow: visible;
 }
 
 .wave {

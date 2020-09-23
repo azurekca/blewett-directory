@@ -1,9 +1,10 @@
 /* MAIN PAGE STYLES */
 body {
 	background-color: $white;
+	background: linear-gradient(to bottom, #b9e3e7 0%, #f6fbef 30%);
 	color: $green900;
 	text-align: center;
-	display: flex;
+	// display: flex;
 	flex-direction: column;
 	align-items: stretch;
 	justify-content: center;
