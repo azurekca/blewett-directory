@@ -155,6 +155,10 @@ body {
   font-size: 17px;
 }
 
+header {
+  z-index: 100;
+}
+
 header, main {
   padding: 21.25px;
 }
@@ -312,6 +316,7 @@ details[open] summary {
   position: relative;
   padding: 33.201px;
   text-align: left;
+  background-color: rgba(246, 251, 239, 0.85);
   border: 2px solid #90cd5f;
   align-content: stretch;
   justify-content: start;
@@ -451,6 +456,90 @@ li:nth-child(5n) .category-link:hover, li:nth-child(5n) .category-link:focus, li
   transform: translateX(50%);
   background-image: radial-gradient(circle at top, #f6fbef 50%, #90cd5f 51%);
   clip-path: circle(50% at 50% 0);
+}
+
+.parallax-container {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: visible;
+  perspective: 8px;
+  perspective-origin: 0%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #b9e3e7 0%, #f6fbef 30%);
+}
+
+.parallax {
+  transform-origin: left;
+  overflow-y: visible;
+}
+
+.parallax-image {
+  overflow-y: visible;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 600px;
+}
+
+.parallax-mtn1 {
+  transform: translateZ(1px) scale(1);
+}
+.parallax-mtn1 .mtn-1 {
+  background: url(../images/mtn1.svg);
+  top: 200px;
+}
+
+.parallax-mtn2 {
+  transform: translateZ(1.5px) scale(1);
+}
+.parallax-mtn2 .mtn-2 {
+  background: url(../images/mtn2.svg);
+  top: 250px;
+}
+
+.parallax-fir {
+  transform: translateZ(2px) scale(0.9);
+}
+.parallax-fir .fir {
+  background: url(../images/fir.svg) repeat-x;
+  background-size: auto 500px;
+  background-position: right;
+  top: 300px;
+}
+
+.parallax-larch {
+  transform: translateZ(2.5px) scale(1);
+}
+.parallax-larch .larch {
+  background: url(../images/larch.svg) repeat-x;
+  background-size: auto 500px;
+  top: 300px;
+}
+
+.parallax-cedar {
+  transform: translateZ(3px) scale(0.7);
+}
+.parallax-cedar .cedar {
+  background: url(../images/cedar.svg) repeat-x;
+  background-size: auto 500px;
+  top: 600px;
+}
+
+.parallax-birch {
+  transform: translateZ(3.5px) scale(0.7);
+}
+.parallax-birch .birch {
+  background: url(../images/birch.svg) repeat-x;
+  background-size: auto 500px;
+  background-position: left;
+  top: 640px;
 }
 
 footer {

@@ -16,13 +16,15 @@
 <body>
   {{ skipLink | safe if skipLink }}
   {%- include 'partials/svg-icons.html' %}
-  {# {%- include 'partials/parallax.html' %} #}
-  {%- include 'partials/header.html' %}
-  <main>
-    {% block stuff %}
-    {% endblock %}
-  </main>
+  <div class="parallax-container">
+    {% include 'partials/parallax.html' %}
+    {%- include 'partials/header.html' %}
+    <main>
+      {% block stuff %}
+      {% endblock %}
+    </main>
   {%- include 'partials/footer.html' %}
+  </div>
   {# Page specific scripts #}
   {% if pageScripts %}
     {%- include pageScripts %}

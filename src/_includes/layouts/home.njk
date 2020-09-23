@@ -9,6 +9,10 @@
   {% set listings = helpers.getListingsByCategory(collections.listings, pagination.items[0]) %}
 {% endif %}
 
+{% block parallax %}
+  {% include 'partials/parallax.html' %}
+{% endblock %}
+
 {% block stuff %}
   {% include 'partials/categories.njk' %}
   {% include 'partials/business-card.njk' %}

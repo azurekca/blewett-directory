@@ -1,62 +1,82 @@
-body {
-  position: relative;
-}
-
-.parallax .group {
-  position: relative;
-	height: 100vh;
-  transform-style: preserve-3d;
-}
-
-.parallax .layer {
+.parallax-container {
   position: absolute;
-  width: 100%;
-  overflow: hidden;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: visible;
+  perspective: 8px;
+  perspective-origin: 0%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #b9e3e7 0%, #f6fbef 30%);
 }
 
-#birch {
-  transform: scale(1) translateY(70vh);
-  opacity: 0.5;
+.parallax {
+  transform-origin: left;
+  overflow-y: visible;
 }
 
-#cedar {
-  transform:  scale(1) translateY(20vh);
-}
-
-#larch {
-  transform: scale(1) translateY(20vh);
-}
-
-#fir {
-  transform: scale(1) translateY(10vh);
-}
-// dark grey
-#mtn1 {
-  fill: #b3b3b3;
-  transform: scale(1) translateY(10vh);
-  z-index: -2;
-}
-// light grey
-#mtn2 {
-  fill: #f6fbef;
-  transform: scale(1) translateY(0);
+.parallax-image {
+  overflow-y: visible;
+  background-size: cover;
+  background-position: center;
   z-index: -1;
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 600px;
 }
 
-.trees2-front {
-  background: #12161e;
-  width: 100vw;
-  height: 30vh;
-  position: relative;
-  margin-top: -5px;
+.parallax-mtn1 {
+  transform: translateZ(1px) scale(1);
+  .mtn-1 {
+    background: url(../images/mtn1.svg);
+    top: 200px;
+  }
 }
-
-.trees-front {
-  position: relative;
-  margin-top: -5px;
-  background-color: #111115;
-  width: 100vw;
-  height: 125vh;
+.parallax-mtn2 {
+  transform: translateZ(1.5px) scale(1);
+  .mtn-2 {
+    background: url(../images/mtn2.svg);
+    top: 250px;
+  }
 }
+.parallax-fir {
+  transform: translateZ(2px) scale(0.9);
+  .fir {
+    background: url(../images/fir.svg) repeat-x;
+    background-size: auto 500px;
+    background-position: right;
+    top: 300px;
+  }
+}
+.parallax-larch {
+  transform: translateZ(2.5px) scale(1);
+  .larch {
+    background: url(../images/larch.svg) repeat-x;
+    background-size: auto 500px;
+    top: 300px;
+  }
+}
+.parallax-cedar {
+  transform: translateZ(3px) scale(0.7);
+    .cedar {
+    background: url(../images/cedar.svg) repeat-x;
+    background-size: auto 500px;
+    top: 600px;
+  }
+}
+.parallax-birch {
+  transform: translateZ(3.5px) scale(0.7);
+    .birch {
+    background: url(../images/birch.svg) repeat-x;
+    background-size: auto 500px;
+    background-position: left;
+    top: 640px;
+  }
+}
+ 
+  
 
 

@@ -10,6 +10,10 @@ body {
 	font-size: $size-base;
 }
 
+header {
+	z-index: 100;
+}
+
 header, main {
 	padding: $size400;
 }

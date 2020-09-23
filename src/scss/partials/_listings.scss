@@ -20,9 +20,8 @@ details[open] summary {
 	position: relative;
 	padding: $size600;
 	text-align: left;
-	// background-color: $white;
+	background-color: rgba($white, 0.85);
 	border: 2px solid $green300;
-	// box-shadow: 3px 4px 6px -2px $blue200, -3px 4px 6px -2px $blue200;
 	align-content: stretch;
 	justify-content: start;
 }
