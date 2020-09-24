@@ -149,6 +149,7 @@ body {
   color: #10413b;
   text-align: center;
   font-size: 17px;
+  scroll-behavior: smooth;
 }
 
 header {
