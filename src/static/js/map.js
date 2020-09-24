@@ -40,9 +40,10 @@ for (var i = 0; i < listings.length; i++) {
  */
 function openPopupAndPanTo(slug) {
   for (var i = 0; i < markers.length; i++) {
-    if (slug === marker[i].options.title) {
-      marker[i].openPopup();
-      map.panTo(marker[i].getLatLng());
+    const marker = markers[i];
+    if (slug === marker.options.title) {
+      marker.openPopup();
+      map.panTo(marker.getLatLng());
     }
   }
 }
