@@ -1,45 +1,52 @@
-footer {
-  position: relative;
-  // overflow: hidden;
-}
-
-footer p {
-  position: relative;
-  z-index: 1;
-}
-
-.container-waves {
-  width: 100vw;
-  position: absolute;
-  bottom: -10px;
-  transform: scaleY(2);
-}
-
-svg#waves {
-  overflow: visible;
-}
-
 .wave {
-  fill: #7bcbdf;
-  opacity: .4;
-  animation: wave 20s linear;
-  animation-iteration-count: infinite;
-}
-#wave2 {
-  fill: var(#3eb3d7);
-  animation-duration: 30s;
-}
-#wave3 {
-  fill: var(#009acf);
-  animation-duration: 40s;
+  // added this here to hide waves on IE
+  fill: transparent;
 }
 
-@keyframes wave {
-  to {transform: translateX(-100%);}
-}
+@supports (animation-name: waves)  {
 
-@media (min-width: 900px) {
+  footer {
+    position: relative;
+  }
+
+  footer p {
+    position: relative;
+    z-index: 1;
+  }
+
   .container-waves {
-    transform: scaleY(1);
+    width: 100vw;
+    position: absolute;
+    bottom: -10px;
+    transform: scaleY(2);
+  }
+
+  svg#waves {
+    overflow: visible;
+  }
+
+  .wave {
+    fill: #7bcbdf;
+    opacity: .4;
+    animation: wave 20s linear;
+    animation-iteration-count: infinite;
+  }
+  #wave2 {
+    fill: var(#3eb3d7);
+    animation-duration: 30s;
+  }
+  #wave3 {
+    fill: var(#009acf);
+    animation-duration: 40s;
+  }
+
+  @keyframes wave {
+    to {transform: translateX(-100%);}
+  }
+
+  @media (min-width: 900px) {
+    .container-waves {
+      transform: scaleY(1);
+    }
   }
 }

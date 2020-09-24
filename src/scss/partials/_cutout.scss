@@ -14,14 +14,16 @@
 	transform: scale(2.6);
 }
 
-.card:after {
-	position: absolute;
-  content: "";
-	top: -2px;
-	right: 50%;
-	width: 7.26rem;
-	height: 4.1rem;
-	transform: translateX(50%);
-	background-image: radial-gradient(circle at top,$white 50%,$green300 51%);
-	clip-path: circle(50% at 50% 0);
+@supports (clip-path: circle()) {
+	.card::after {
+		position: absolute;
+		content: "";
+		top: -2px;
+		right: 50%;
+		width: 7.26rem;
+		height: 4.1rem;
+		transform: translateX(50%);
+		background-image: radial-gradient(circle at top,$white 50%,$green300 51%);
+		clip-path: circle(50% at 50% 0);
+	}
 }
