@@ -2,7 +2,7 @@
 title: Nelson's Sameday Courier Delivery
 category:
   - Delivery
-website: https://nelsons-sameday-courier.business.site/?utm_source=gmb&utm_medium=referral
+website: https://nelsons-sameday-courier.business.site/
 phone: 250-551-2727
 email: john.murley@shaw.ca
 contact: John
