@@ -1,7 +1,7 @@
 ---
 title: Cover Architectural Collaborative Inc
 category:
-  - Accommodation
+  - Architect
 website: http://coverac.ca/
 email: lukas@coverac.ca
 contact: Lukas
