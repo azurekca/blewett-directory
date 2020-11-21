@@ -9,5 +9,5 @@ contact: Jill Zinszer
 about: Registered Massage therapy and Registered Acupuncture
 social: []
 showMap: true
-geometry: '{"type":"Point","coordinates":[-117.3918235,49.486667]}'
+geometry: '{"type":"Point","coordinates":[-117.445178,49.4748589]}'
 ---
