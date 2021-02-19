@@ -1,5 +1,5 @@
 ---
-title: We Are Stories
+title: We are Stories
 category:
   - Handmade
 address: Bonnington
