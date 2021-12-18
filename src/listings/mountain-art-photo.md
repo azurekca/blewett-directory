@@ -16,5 +16,5 @@ social:
   - type: instagram
     url: https://www.instagram.com/mountain_art_photo
 showMap: true
-geometry: '{"type":"Point","coordinates":[-117.3918235,49.486667]}'
+geometry: '{"type":"Point","coordinates":[-117.3769855,49.4905992]}'
 ---
