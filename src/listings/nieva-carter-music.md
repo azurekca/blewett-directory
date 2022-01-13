@@ -17,6 +17,6 @@ about: "Certified teachers available for private music lessons:\r
   - music theory\r
 
   - drums (starting February 2022)"
-showMap: false
+showMap: true
 geometry: '{"type":"Point","coordinates":[-117.4000273,49.4817589]}'
 ---
